@@ -1,2 +1,28 @@
 @import 'grid';
 @import 'variables';
+
+.card-course{
+    margin-bottom: 1rem;
+    &__link:hover{
+        text-decoration: none;
+    }
+    &__description{
+        min-height:3rem;
+        display: inline-block;
+        word-wrap: break-word;
+        overflow: hidden;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+}
+.user-avatar{
+    width:28px;
+    height:28px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.item-course{
+    display: flex;
+}

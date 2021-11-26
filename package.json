@@ -4,8 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "prettycode": "prettier --single-quote --trailing-comma all --write \"src/**/*.{js,json,scss}\"",
     "start": "nodemon --inspect src/index.js",
-    "watch":"node-sass --watch src/resourses/scss/ --output src/public/css/",
+    "watch": "node-sass --watch src/resourses/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,11 +26,18 @@
   "homepage": "https://github.com/phongvo198/F8-Nodejs-Demo#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.7",
+    "mongoose-delete": "^0.5.4",
+    "mongoose-slug-generator": "^1.0.4"
   },
   "devDependencies": {
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   }
 }
