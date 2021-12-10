@@ -74,7 +74,23 @@ class CourseController {
   handleFormActions(req, res, next) {
     switch (req.body.action) {
       case "delete":
-        Course.delete({ _id: { $in: req.body.courseIds} })//Truyền vào 1 mảng dùng $in:
+        Course.delete({ _id: { $in: req.body.courseIds } }) //Truyền vào 1 mảng dùng $in:
+          .then(() => {
+            res.redirect("back");
+          })
+          .catch(next);
+
+        break;
+      case "destroy":
+        Course.deleteMany({ _id: { $in: req.body.courseIds } }) //Truyền vào 1 mảng dùng $in:
+          .then(() => {
+            res.redirect("back");
+          })
+          .catch(next);
+        break;
+
+      case "restore":
+        Course.restore({ _id: { $in: req.body.courseIds } }) //Truyền vào 1 mảng dùng $in:
           .then(() => {
             res.redirect("back");
           })

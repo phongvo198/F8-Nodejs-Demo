@@ -5,6 +5,7 @@ const route = require("./routes"); //=>index route
 const db = require("./config/db");
 const methodOverride = require("method-override");
 const handlebars = require("express-handlebars");
+const SortMiddleware= require("./app/middlelwares/SortMiddleware");
 const app = express();
 const port = 3000;
 
@@ -19,6 +20,9 @@ app.use(
 );
 app.use(express.json());
 app.use(methodOverride("_method"));
+
+//Custom middleware sort
+app.use(SortMiddleware);
 //file public
 app.use(express.static(path.join(__dirname, "public"))); //.../img/f8_text_logo.png
 app.use(morgan("combined"));
